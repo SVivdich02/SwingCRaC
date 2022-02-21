@@ -9,19 +9,35 @@ public class Operation {
     }
 
     public static class CreatePanel extends Operation {
+        MyJPanel arg0;
+        public CreatePanel(MyJPanel arg0) {
+            this.arg0 = arg0;
+        }
         public void run() {
-            new MyJPanel();
+            MyJPanel p = new MyJPanel();
+            this.arg0 = p;
         }
     }
 
     public static class CreateButton extends Operation {
+        MyJButton arg0;
+        public CreateButton(MyJButton arg0) {
+            this.arg0 = arg0;
+        }
         public void run() {
-            new MyJButton();
+            MyJButton b = new MyJButton();
+            this.arg0 = b;
         }
     }
     public static class CreateFrame extends Operation {
+        MyJFrame arg0;
+        public CreateFrame(MyJFrame arg0) {
+            this.arg0 = arg0;
+        }
+
         public void run() {
-            new MyJFrame();
+            MyJFrame f = new MyJFrame();
+            this.arg0 = f;
         }
     }
 
