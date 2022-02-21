@@ -5,7 +5,7 @@ public class MyJFrame extends JFrame {
         super.setBounds(100, 100, 700, 700);
         super.setVisible(true);
         super.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        GlobalList.list.add(new Operation.CreateFrame());
+        GlobalList.list.add(new Operation.CreateFrame(this));
     }
 
    // @Override

@@ -6,7 +6,7 @@ public class MyJPanel extends JPanel{
     {
         //GlobalList.list.add(new Operation.Create(MyJPanel.class));
         this.setBackground(Color.GREEN);
-        GlobalList.list.add(new Operation.CreatePanel());
+        GlobalList.list.add(new Operation.CreatePanel(this));
     }
 
     public void add(MyJButton button) {
