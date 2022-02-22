@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MyJPanel extends JPanel{
+    // MyJPanel newPanel;
     public MyJPanel()
     {
         //GlobalList.list.add(new Operation.Create(MyJPanel.class));
@@ -13,4 +14,12 @@ public class MyJPanel extends JPanel{
         super.add(button);
         GlobalList.list.add(new Operation.AddButtonToPanel(this, button));
     }
+    
+    /*
+    public MyJPanel Update()
+    {
+        MyJPanel newpan  = this.newPanel;
+        return newpan;
+    }
+    */
 }
