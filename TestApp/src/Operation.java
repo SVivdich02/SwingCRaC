@@ -4,18 +4,7 @@ public class Operation {
     public Operation() {
     }
 
-    public MyJPanel runPan() {
-        throw new RuntimeException("don't call me");
-    }
-    public MyJButton runBut() {
-        throw new RuntimeException("don't call me");
-    }
-    public MyJFrame runFr() {
-        throw new RuntimeException("don't call me");
-    }
-    public void runAddPan(MyJFrame f, MyJPanel p) {throw new RuntimeException("don't call me");}
-    public void runAddBut(MyJPanel p, MyJButton b) {throw new RuntimeException("don't call me");}
-    
+    public void run() {throw new RuntimeException("don't call me");}
     
     public static class CreatePanel extends Operation {
         MyJPanel arg0;
@@ -23,10 +12,9 @@ public class Operation {
             this.arg0 = arg0;
         }
 
-        public MyJPanel runPan() {
+        public void run() {
             MyJPanel p = new MyJPanel();
-            this.arg0 = p;
-            return this.arg0;
+            this.arg0.newPanel = p;
         }
     }
 
@@ -36,22 +24,21 @@ public class Operation {
             this.arg0 = arg0;
         }
 
-        public MyJButton runBut() {
+        public void run() {
             MyJButton b = new MyJButton();
-            this.arg0 = b;
-            return this.arg0;
+            this.arg0.newButton = b;
         }
     }
+    
     public static class CreateFrame extends Operation {
         MyJFrame arg0;
         public CreateFrame(MyJFrame arg0) {
             this.arg0 = arg0;
         }
 
-        public MyJFrame runFr() {
+        public void run() {
             MyJFrame f = new MyJFrame();
-            this.arg0 = f;
-            return this.arg0;
+            this.arg0.newFrame  = f;
         }
     }
 
@@ -82,15 +69,8 @@ public class Operation {
             this.arg1 = arg1;
         }
 
-        public void runAddBut(MyJPanel p, MyJButton b) {
-            /*
-            MyJPanel newpanel = this.arg0.newPanel;
-            MyJButton newbutton = this.arg1.newButton;
-            if (newpanel != null && newbutton != null) {
-                newpanel.add(newbutton);
-            }
-            */
-            p.add(b);
+        public void run() {
+            this.arg0.newPanel.add(this.arg1.newButton);
         }
     }
 
@@ -103,17 +83,8 @@ public class Operation {
             this.arg1 = arg1;
         }
 
-        public void runAddPan(MyJFrame f, MyJPanel p) {
-
-            /*
-            MyJFrame newframe = this.arg0.newFrame;
-            MyJPanel newpanel = this.arg1.newPanel;
-            if (newpanel != null && newframe != null) {
-                newframe.add(newpanel);
-            }
-            */
-
-            f.add(p);
+        public void run() {
+            this.arg0.newFrame.add(this.arg1.newPanel);
         }
     }
 }

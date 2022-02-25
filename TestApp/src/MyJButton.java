@@ -4,18 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyJButton extends JButton{
-    //MyJButton newButton;
+    MyJButton newButton;
+    
     public MyJButton() {
-    	// super();
         GlobalList.list.add(new Operation.CreateButton(this));
+        this.newButton = this;
     }
     
-    /*
-    public MyJButton Update()
-    {
-        MyJButton newbut = this.newButton;
-        return newbut;
-    }
-    */
-}
 }
